@@ -1,0 +1,17 @@
+# R environment files
+.RData
+.Rhistory
+.Rproj.user/
+
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Temporary files and caches
+*.tmp
+*.temp
+*.log
+~*

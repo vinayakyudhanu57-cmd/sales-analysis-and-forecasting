@@ -1,0 +1,4 @@
+"forecast_month","predicted_revenue","lower_bound_95","upper_bound_95","forecast_method"
+"2026-01",4606.16,3963.37,5248.96,"Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"
+"2026-02",4526.82,3883.78,5169.86,"Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"
+"2026-03",4936.01,4292.42,5579.6,"Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"

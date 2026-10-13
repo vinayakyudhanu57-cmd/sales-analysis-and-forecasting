@@ -1,0 +1,130 @@
+{
+  "statistics": {
+  "total_revenue": 157534.25,
+  "total_units_sold": 5027,
+  "total_transactions": 445,
+  "total_months": 36,
+  "average_monthly_revenue": 4375.95,
+  "median_monthly_revenue": 4200.7,
+  "std_monthly_revenue": 849.02,
+  "highest_revenue_month": {
+  "month": "2025-11",
+  "revenue": 6469.77
+},
+  "lowest_revenue_month": {
+  "month": "2023-02",
+  "revenue": 3124.31
+},
+  "best_performing_product": {
+  "product": "Wireless Keyboard",
+  "total_revenue": 37899.14,
+  "revenue_percentage": 24.06
+},
+  "lowest_performing_product": {
+  "product": "Desk Mat",
+  "total_revenue": 26364.19,
+  "revenue_percentage": 16.74
+},
+  "time_period_start": "2023-01",
+  "time_period_end": "2025-12"
+},
+  "monthly_sales": [
+  {"month": "2023-01", "total_units": 106, "total_revenue": 3345.09, "transaction_count": 13},
+  {"month": "2023-02", "total_units": 103, "total_revenue": 3124.31, "transaction_count": 13},
+  {"month": "2023-03", "total_units": 120, "total_revenue": 3755.36, "transaction_count": 11},
+  {"month": "2023-04", "total_units": 110, "total_revenue": 3460.59, "transaction_count": 12},
+  {"month": "2023-05", "total_units": 118, "total_revenue": 3664.29, "transaction_count": 11},
+  {"month": "2023-06", "total_units": 118, "total_revenue": 3684.6, "transaction_count": 11},
+  {"month": "2023-07", "total_units": 115, "total_revenue": 3422.36, "transaction_count": 14},
+  {"month": "2023-08", "total_units": 132, "total_revenue": 4158.6, "transaction_count": 11},
+  {"month": "2023-09", "total_units": 141, "total_revenue": 4277.04, "transaction_count": 13},
+  {"month": "2023-10", "total_units": 127, "total_revenue": 4038.07, "transaction_count": 12},
+  {"month": "2023-11", "total_units": 170, "total_revenue": 5335.72, "transaction_count": 13},
+  {"month": "2023-12", "total_units": 171, "total_revenue": 5428.2, "transaction_count": 13},
+  {"month": "2024-01", "total_units": 114, "total_revenue": 3444.07, "transaction_count": 12},
+  {"month": "2024-02", "total_units": 112, "total_revenue": 3692.12, "transaction_count": 10},
+  {"month": "2024-03", "total_units": 125, "total_revenue": 3817.57, "transaction_count": 13},
+  {"month": "2024-04", "total_units": 129, "total_revenue": 4072.78, "transaction_count": 14},
+  {"month": "2024-05", "total_units": 138, "total_revenue": 4332.23, "transaction_count": 15},
+  {"month": "2024-06", "total_units": 134, "total_revenue": 4101.27, "transaction_count": 12},
+  {"month": "2024-07", "total_units": 128, "total_revenue": 4012.28, "transaction_count": 11},
+  {"month": "2024-08", "total_units": 139, "total_revenue": 4240.23, "transaction_count": 12},
+  {"month": "2024-09", "total_units": 138, "total_revenue": 4414.57, "transaction_count": 12},
+  {"month": "2024-10", "total_units": 136, "total_revenue": 4200.46, "transaction_count": 13},
+  {"month": "2024-11", "total_units": 168, "total_revenue": 5357.99, "transaction_count": 12},
+  {"month": "2024-12", "total_units": 198, "total_revenue": 6132.87, "transaction_count": 12},
+  {"month": "2025-01", "total_units": 132, "total_revenue": 4353.74, "transaction_count": 12},
+  {"month": "2025-02", "total_units": 117, "total_revenue": 3707.54, "transaction_count": 13},
+  {"month": "2025-03", "total_units": 144, "total_revenue": 4548.9, "transaction_count": 13},
+  {"month": "2025-04", "total_units": 149, "total_revenue": 4985.87, "transaction_count": 12},
+  {"month": "2025-05", "total_units": 144, "total_revenue": 4450.16, "transaction_count": 12},
+  {"month": "2025-06", "total_units": 144, "total_revenue": 4399.85, "transaction_count": 11},
+  {"month": "2025-07", "total_units": 132, "total_revenue": 4138.62, "transaction_count": 13},
+  {"month": "2025-08", "total_units": 152, "total_revenue": 4726.24, "transaction_count": 12},
+  {"month": "2025-09", "total_units": 172, "total_revenue": 5585.47, "transaction_count": 13},
+  {"month": "2025-10", "total_units": 131, "total_revenue": 4200.94, "transaction_count": 11},
+  {"month": "2025-11", "total_units": 208, "total_revenue": 6469.77, "transaction_count": 13},
+  {"month": "2025-12", "total_units": 212, "total_revenue": 6454.48, "transaction_count": 15}
+],
+  "product_summary": [
+  {"product": "Wireless Keyboard", "total_units": 792, "total_revenue": 37899.14, "transaction_count": 88, "avg_revenue_per_sale": 430.67, "revenue_percentage": 24.06},
+  {"product": "USB-C Multiport Hub", "total_units": 1174, "total_revenue": 33004.69, "transaction_count": 90, "avg_revenue_per_sale": 366.72, "revenue_percentage": 20.95},
+  {"product": "Ergonomic Mouse", "total_units": 1018, "total_revenue": 32925.8, "transaction_count": 90, "avg_revenue_per_sale": 365.84, "revenue_percentage": 20.9},
+  {"product": "Aluminum Laptop Stand", "total_units": 652, "total_revenue": 27340.43, "transaction_count": 87, "avg_revenue_per_sale": 314.26, "revenue_percentage": 17.36},
+  {"product": "Desk Mat", "total_units": 1391, "total_revenue": 26364.19, "transaction_count": 90, "avg_revenue_per_sale": 292.94, "revenue_percentage": 16.74}
+],
+  "forecast": [
+  {"forecast_month": "2026-01", "predicted_revenue": 4606.16, "lower_bound_95": 3963.37, "upper_bound_95": 5248.96, "forecast_method": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"},
+  {"forecast_month": "2026-02", "predicted_revenue": 4526.82, "lower_bound_95": 3883.78, "upper_bound_95": 5169.86, "forecast_method": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"},
+  {"forecast_month": "2026-03", "predicted_revenue": 4936.01, "lower_bound_95": 4292.42, "upper_bound_95": 5579.6, "forecast_method": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)"}
+],
+  "evaluation": {
+  "holdout_window_months": 3,
+  "holdout_mae": 336.73,
+  "holdout_mape": 7.2,
+  "model_method": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)",
+  "is_forecast_package_used": false
+},
+  "business_insights": {
+  "primary_revenue_driver": {
+  "title": "Top Revenue Contributor",
+  "product": "Wireless Keyboard",
+  "revenue": 37899.14,
+  "percentage": 24.06,
+  "description": "Wireless Keyboard is the business's leading revenue driver, generating $37,899.14 across 36 months (24.06% of total revenue). Maintaining stock availability for this high-velocity item is essential."
+},
+  "historical_growth": {
+  "title": "Multi-Year Sales Momentum",
+  "growth_percentage": 21.7,
+  "first_year_revenue": 47694.23,
+  "last_year_revenue": 58021.58,
+  "description": "Annual revenue expanded by 21.7% from the initial 12-month period ($47,694.23) to the final 12-month period ($58,021.58). This indicates sustainable, steady commercial growth across product lines."
+},
+  "seasonality_pattern": {
+  "title": "Seasonal Demand Variations",
+  "peak_month": "2025-11",
+  "peak_revenue": 6469.77,
+  "trough_month": "2023-02",
+  "trough_revenue": 3124.31,
+  "description": "Sales exhibit strong seasonality, peaking in 2025-11 at $6,469.77 during Q4 holiday commercial cycles. The lowest recorded volume occurred in 2023-02 ($3,124.31), reflecting standard post-holiday retail lulls."
+},
+  "forecast_outlook": {
+  "title": "Three-Month Revenue Projection",
+  "projected_total": 14068.99,
+  "projected_range": "$12,139.57 to $15,998.42",
+  "model_used": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)",
+  "holdout_mape": 7.2,
+  "description": "Projected revenue for the next 3 months (2026-01 to 2026-03) is estimated at $14,068.99 (95% prediction interval: $12,139.57 – $15,998.42). Holdout testing yielded a Mean Absolute Percentage Error (MAPE) of 7.2%."
+},
+  "actionable_recommendations": [
+  "Align inventory restocking for the top product ('Wireless Keyboard') 4 to 6 weeks before anticipated demand surges.",
+  "Buffer working capital during Q1 to absorb predictable post-holiday seasonal dips observed in January and February.",
+  "Consider bundling slower-moving catalogue items like 'Desk Mat' with high-velocity accessories to lift average order value."
+]
+},
+  "metadata": {
+  "generated_at": "2026-10-13 16:12:51 UTC",
+  "environment": "R version 4.6.1 (2026-06-24 ucrt)",
+  "data_disclaimer": "Synthetic commercial retail dataset generated for analytical demonstration purposes. Forecasts are statistical estimates and do not guarantee future commercial performance."
+}
+}

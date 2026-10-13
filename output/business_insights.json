@@ -1,0 +1,37 @@
+{
+  "primary_revenue_driver": {
+  "title": "Top Revenue Contributor",
+  "product": "Wireless Keyboard",
+  "revenue": 37899.14,
+  "percentage": 24.06,
+  "description": "Wireless Keyboard is the business's leading revenue driver, generating $37,899.14 across 36 months (24.06% of total revenue). Maintaining stock availability for this high-velocity item is essential."
+},
+  "historical_growth": {
+  "title": "Multi-Year Sales Momentum",
+  "growth_percentage": 21.7,
+  "first_year_revenue": 47694.23,
+  "last_year_revenue": 58021.58,
+  "description": "Annual revenue expanded by 21.7% from the initial 12-month period ($47,694.23) to the final 12-month period ($58,021.58). This indicates sustainable, steady commercial growth across product lines."
+},
+  "seasonality_pattern": {
+  "title": "Seasonal Demand Variations",
+  "peak_month": "2025-11",
+  "peak_revenue": 6469.77,
+  "trough_month": "2023-02",
+  "trough_revenue": 3124.31,
+  "description": "Sales exhibit strong seasonality, peaking in 2025-11 at $6,469.77 during Q4 holiday commercial cycles. The lowest recorded volume occurred in 2023-02 ($3,124.31), reflecting standard post-holiday retail lulls."
+},
+  "forecast_outlook": {
+  "title": "Three-Month Revenue Projection",
+  "projected_total": 14068.99,
+  "projected_range": "$12,139.57 to $15,998.42",
+  "model_used": "Holt-Winters Exponential Smoothing (Base R stats, 95% PI)",
+  "holdout_mape": 7.2,
+  "description": "Projected revenue for the next 3 months (2026-01 to 2026-03) is estimated at $14,068.99 (95% prediction interval: $12,139.57 – $15,998.42). Holdout testing yielded a Mean Absolute Percentage Error (MAPE) of 7.2%."
+},
+  "actionable_recommendations": [
+  "Align inventory restocking for the top product ('Wireless Keyboard') 4 to 6 weeks before anticipated demand surges.",
+  "Buffer working capital during Q1 to absorb predictable post-holiday seasonal dips observed in January and February.",
+  "Consider bundling slower-moving catalogue items like 'Desk Mat' with high-velocity accessories to lift average order value."
+]
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sales Analysis and Forecasting Dashboard — Historical sales trends, product performance, and time-series revenue projections for small business planning.">
+  <title>Sales Analysis &amp; Forecasting Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation / Application Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Sales Analytics &amp; Forecasting</h1>
+          <p class="brand-subtitle">Commercial Performance, Product Breakdown &amp; Time-Series Revenue Projections</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="badge" id="badge-period">Loading Horizon...</span>
+        <span class="badge badge-subtle" id="badge-status">Active Model</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- Error Alert Notification -->
+    <div id="error-alert" class="alert-banner" role="alert" style="display: none;">
+      <div class="alert-icon" aria-hidden="true">⚠️</div>
+      <div class="alert-content">
+        <strong id="error-title">Unable to Load Analytical Data</strong>
+        <p id="error-message">Could not retrieve dashboard data from <code>output/dashboard_data.json</code>. If viewing locally, ensure you are running a local web server (e.g. <code>python -m http.server 8000</code>) and that the R analysis pipeline has been executed.</p>
+      </div>
+    </div>
+
+    <!-- Section 1: Overview -->
+    <section id="section-overview" class="section-block">
+      <div class="section-header">
+        <div class="section-badge">01. Summary</div>
+        <h2 class="section-title">Executive Sales Overview</h2>
+        <p class="section-lead">Aggregate performance metrics synthesized across 36 consecutive operational months.</p>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi-card" id="card-total-revenue">
+          <div class="kpi-label">Cumulative Revenue</div>
+          <div class="kpi-value" id="kpi-total-revenue">—</div>
+          <div class="kpi-detail" id="kpi-revenue-context">Across 36 recorded months</div>
+        </div>
+
+        <div class="kpi-card" id="card-total-units">
+          <div class="kpi-label">Total Units Sold</div>
+          <div class="kpi-value" id="kpi-total-units">—</div>
+          <div class="kpi-detail" id="kpi-units-context">Commercial product orders</div>
+        </div>
+
+        <div class="kpi-card" id="card-avg-monthly">
+          <div class="kpi-label">Average Monthly Revenue</div>
+          <div class="kpi-value" id="kpi-avg-monthly">—</div>
+          <div class="kpi-detail" id="kpi-monthly-range">Median: —</div>
+        </div>
+
+        <div class="kpi-card" id="card-top-product">
+          <div class="kpi-label">Top Commercial Product</div>
+          <div class="kpi-value kpi-value-text" id="kpi-top-product">—</div>
+          <div class="kpi-detail" id="kpi-top-share">— of total gross revenue</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Sales Analysis -->
+    <section id="section-analysis" class="section-block">
+      <div class="section-header">
+        <div class="section-badge">02. Historical Performance</div>
+        <h2 class="section-title">Sales Trends &amp; Product Performance</h2>
+        <p class="section-lead">Monthly revenue trajectory alongside ranked catalogue contribution.</p>
+      </div>
+
+      <div class="analysis-grid">
+        <!-- Monthly Trend Chart Card -->
+        <div class="card chart-card">
+          <div class="card-header-row">
+            <div>
+              <h3 class="card-title">Monthly Revenue Trajectory</h3>
+              <p class="card-subtitle">Observed revenue across 36 months with seasonal peaks</p>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><span class="legend-color legend-blue"></span> Observed</span>
+              <span class="legend-item"><span class="legend-color legend-avg"></span> Mean</span>
+            </div>
+          </div>
+          <div class="chart-wrapper" id="trend-chart-container">
+            <svg id="trend-svg" class="analytics-svg" viewBox="0 0 800 280" preserveAspectRatio="none" aria-label="Monthly Revenue Trend Line Chart"></svg>
+            <div id="chart-tooltip" class="chart-tooltip" style="display: none;"></div>
+          </div>
+          <div class="chart-footer-row">
+            <div class="mini-stat">
+              <span class="mini-stat-label">Peak Month:</span>
+              <span class="mini-stat-value" id="stat-peak-month">—</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat-label">Lowest Month:</span>
+              <span class="mini-stat-value" id="stat-lowest-month">—</span>
+            </div>
+            <div class="mini-stat">
+              <span class="mini-stat-label">Standard Deviation:</span>
+              <span class="mini-stat-value" id="stat-std-dev">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Breakdown Card -->
+        <div class="card product-card">
+          <div class="card-header-row">
+            <div>
+              <h3 class="card-title">Product Contribution Breakdown</h3>
+              <p class="card-subtitle">Ranked gross revenue and sales share by product line</p>
+            </div>
+          </div>
+          <div class="product-list" id="product-list-container">
+            <!-- Dynamically populated via script.js -->
+            <div class="skeleton-row">Loading product performance...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Revenue Forecast -->
+    <section id="section-forecast" class="section-block">
+      <div class="section-header">
+        <div class="section-badge">03. Statistical Projection</div>
+        <h2 class="section-title">Three-Month Revenue Forecast</h2>
+        <p class="section-lead">Time-series forecasting based on historical trend and seasonal factors.</p>
+      </div>
+
+      <!-- Forecast Callout & Disclaimer -->
+      <div class="disclaimer-banner">
+        <div class="disclaimer-badge">Statistical Estimate</div>
+        <p class="disclaimer-text">
+          These projections are calculated using <strong>Holt-Winters Exponential Smoothing</strong> on historical sales observations. Forecasts are model-based planning estimates and do not guarantee future commercial revenue or market outcomes.
+        </p>
+      </div>
+
+      <div class="forecast-grid">
+        <!-- Forecast Cards -->
+        <div class="forecast-cards-col" id="forecast-cards-container">
+          <!-- Dynamically populated -->
+        </div>
+
+        <!-- Forecast Methodology Card -->
+        <div class="card method-card">
+          <h3 class="card-title">Forecasting Methodology</h3>
+          <div class="method-meta-item">
+            <span class="method-meta-label">Selected Model:</span>
+            <span class="method-meta-value" id="method-name">—</span>
+          </div>
+          <div class="method-meta-item">
+            <span class="method-meta-label">Holdout Accuracy (MAPE):</span>
+            <span class="method-meta-value" id="method-mape">—</span>
+          </div>
+          <div class="method-meta-item">
+            <span class="method-meta-label">Holdout Error (MAE):</span>
+            <span class="method-meta-value" id="method-mae">—</span>
+          </div>
+          <div class="method-meta-item">
+            <span class="method-meta-label">Prediction Confidence:</span>
+            <span class="method-meta-value">95% Interval Bands</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <h4 class="method-subheading">Model Limitations &amp; Assumptions</h4>
+          <ul class="method-notes">
+            <li>Assumes continuation of historical seasonal cycles and price structures.</li>
+            <li>Does not anticipate external macroeconomic shocks or supply interruptions.</li>
+            <li>Holdout evaluation tested chronologically on the final quarter without data leakage.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Business Insights -->
+    <section id="section-insights" class="section-block">
+      <div class="section-header">
+        <div class="section-badge">04. Strategic Guidance</div>
+        <h2 class="section-title">Data-Driven Business Insights</h2>
+        <p class="section-lead">Practical operational findings derived from statistical analysis of the sales dataset.</p>
+      </div>
+
+      <div class="insights-grid" id="insights-grid-container">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Practical Recommendations Card -->
+      <div class="card recommendations-card">
+        <div class="recs-header">
+          <div class="recs-icon" aria-hidden="true">💡</div>
+          <div>
+            <h3 class="card-title">Recommended Small Business Actions</h3>
+            <p class="card-subtitle">Practical steps to optimize inventory, working capital, and catalogue performance</p>
+          </div>
+        </div>
+        <ul class="recs-list" id="recommendations-list">
+          <!-- Dynamically populated -->
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">Sales Analysis &amp; Forecasting</p>
+        <p class="footer-text">Clean statistical business analytics built with Base R, ggplot2, and minimal light web design.</p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-meta" id="footer-metadata">Generated with R 4.6.1 | Pure Base R Pipeline</p>
+        <p class="footer-disclaimer">Static dashboard for local and GitHub Pages deployment. Analysis pre-computed via R.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
