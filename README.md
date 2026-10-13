@@ -126,22 +126,6 @@ Expected output:
 
 ---
 
-## 9. How to Deploy to GitHub Pages
-
-1. Initialize Git and stage your files:
-   ```bash
-   git add .
-   git commit -m "Initial release of Sales Analysis and Forecasting dashboard"
-   ```
-
-2. Link your GitHub repository and push:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/<YOUR_USERNAME>/sales-analysis-and-forecasting.git
-   git push -u origin main
-   ```
-
-3. Enable GitHub Pages:
    - Navigate to **Settings** > **Pages** in your GitHub repository.
    - Under **Build and deployment** > **Source**, choose **Deploy from a branch**.
    - Select branch **`main`** and folder **`/ (root)`**.
